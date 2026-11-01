@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ProjectHub – Discover internships and project opportunities matching your skills and interests." />
+  <title>ProjectHub – Searchable Listing Dashboard</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ===== SKIP LINK (Accessibility) ===== -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="navbar" role="banner">
+    <div class="navbar__container">
+
+      <!-- Logo -->
+      <a href="#" class="navbar__logo" aria-label="ProjectHub home">
+        <span class="navbar__logo-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="28" height="28" rx="8" fill="#2563EB"/>
+            <path d="M7 8h6a4 4 0 0 1 0 8H7V8Z" fill="white"/>
+            <circle cx="19" cy="18" r="3" fill="#7C3AED"/>
+          </svg>
+        </span>
+        <span class="navbar__logo-text">Project<span class="navbar__logo-accent">Hub</span></span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="navbar__nav" role="navigation" aria-label="Main navigation">
+        <ul class="navbar__nav-list" role="list">
+          <li>
+            <a href="#" class="navbar__nav-link navbar__nav-link--active" id="nav-explore" aria-current="page">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:3px;">
+                <rect x="1" y="1" width="5" height="5" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="8" y="1" width="5" height="5" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="1" y="8" width="5" height="5" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="8" y="8" width="5" height="5" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#listings" class="navbar__nav-link" id="nav-listings">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:3px;">
+                <circle cx="7" cy="7" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M4.5 7h5M7 4.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Explore Projects
+            </a>
+          </li>
+          <li>
+            <a href="#" class="navbar__nav-link" id="nav-saved" data-view="saved">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:3px;">
+                <path d="M3 2h8a1 1 0 0 1 1 1v8.5l-4.5-2.5L3 11.5V3a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              Saved Projects
+              <span class="navbar__saved-badge" id="nav-saved-count" aria-label="saved projects count"></span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Right side: Profile Avatar + Hamburger -->
+      <div class="navbar__right">
+        <div class="navbar__profile-wrapper">
+          <button
+            type="button"
+            class="navbar__profile"
+            id="profile-btn"
+            aria-label="View Srihan's candidate profile"
+            title="View Srihan's profile"
+          >
+            <span class="navbar__profile-avatar" aria-hidden="true">SR</span>
+            <span class="navbar__profile-name">Srihan</span>
+            <span class="navbar__profile-badge-pill" aria-hidden="true">Profile</span>
+          </button>
+        </div>
+
+        <!-- Mobile hamburger -->
+        <button
+          class="navbar__hamburger"
+          id="hamburger-btn"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="navbar__hamburger-bar"></span>
+          <span class="navbar__hamburger-bar"></span>
+          <span class="navbar__hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Menu Drawer -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Navigation menu" hidden>
+      <nav aria-label="Mobile navigation">
+        <ul class="mobile-menu__list" role="list">
+          <li>
+            <a href="#" class="mobile-menu__link mobile-menu__link--active" id="mobile-nav-explore">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <rect x="1" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="9" y="1" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="1" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="9" y="9" width="6" height="6" rx="1.5" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#listings" class="mobile-menu__link" id="mobile-nav-listings">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M5 8h6M8 5v6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Explore Projects
+            </a>
+          </li>
+          <li>
+            <a href="#" class="mobile-menu__link" id="mobile-nav-saved" data-view="saved">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 2h10a1 1 0 0 1 1 1v10.5l-5.5-3-5.5 3V3a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              Saved Projects
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="mobile-menu__profile" id="mobile-profile-btn" role="button" tabindex="0" aria-label="View candidate profile" style="cursor: pointer;">
+        <span class="navbar__profile-avatar" aria-hidden="true">SR</span>
+        <div>
+          <p class="mobile-menu__profile-name">Srihan</p>
+          <p class="mobile-menu__profile-email">srihan@projecthub.io &bull; <strong style="color:var(--color-primary);">View Profile</strong></p>
+        </div>
+      </div>
+    </div>
+
+  </header>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main id="main-content">
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero__orb" aria-hidden="true"></div>
+      <div class="hero__container">
+        <div class="hero__content">
+          <span class="hero__badge" aria-label="Section label: Project Explorer">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none" aria-hidden="true">
+              <circle cx="4" cy="4" r="3.5" fill="#2563EB"/>
+            </svg>
+            PROJECT EXPLORER
+          </span>
+
+          <h1 id="hero-heading" class="hero__heading">
+            Discover Your Next<br/>
+            <span class="hero__heading-accent">Opportunity</span>
+          </h1>
+
+          <p class="hero__subtext">
+            Explore curated projects, discover new skills, and find opportunities
+            that perfectly match your interests and experience level.
+          </p>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="hero__search-wrapper">
+          <div class="hero__search-box" role="search">
+            <label for="main-search" class="sr-only">Search projects, skills, or keywords</label>
+            <span class="hero__search-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <circle cx="8.5" cy="8.5" r="5.75" stroke="#94A3B8" stroke-width="1.75"/>
+                <path d="M13 13l3.5 3.5" stroke="#94A3B8" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <input
+              type="search"
+              id="main-search"
+              class="hero__search-input"
+              placeholder="Search projects, skills, or keywords..."
+              autocomplete="off"
+              aria-label="Search projects, skills, or keywords"
+              aria-describedby="search-hint"
+            />
+            <button
+              class="hero__search-clear"
+              id="search-clear-btn"
+              aria-label="Clear search"
+              hidden
+              title="Clear search"
+            >
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <path d="M3 3l8 8M11 3l-8 8" stroke="#64748B" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+            </button>
+          </div>
+          <p class="hero__search-hint" id="search-hint">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true" style="display:inline;opacity:0.6">
+              <circle cx="6" cy="6" r="5" stroke="#94A3B8" stroke-width="1.25"/>
+              <path d="M6 5v4M6 3.5v.5" stroke="#94A3B8" stroke-width="1.25" stroke-linecap="round"/>
+            </svg>
+            Try "Python", "Remote", "Beginner", or "Data Science"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SUMMARY STATS SECTION ===== -->
+    <section class="stats" aria-label="Dashboard summary statistics" data-animate>
+      <div class="stats__container">
+        <div class="stats__grid">
+
+          <article class="stats__card" aria-label="Total listings">
+            <div class="stats__card-icon stats__card-icon--blue" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="2" y="3" width="18" height="16" rx="3" stroke="white" stroke-width="1.75"/>
+                <path d="M6 8h10M6 12h7" stroke="white" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="stats__card-content">
+              <span class="stats__card-value" id="stat-total">—</span>
+              <span class="stats__card-label">Total Listings</span>
+            </div>
+            <div class="stats__card-accent stats__card-accent--blue" aria-hidden="true"></div>
+          </article>
+
+          <article class="stats__card" aria-label="Domains available">
+            <div class="stats__card-icon stats__card-icon--violet" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M11 2a9 9 0 1 0 0 18A9 9 0 0 0 11 2Z" stroke="white" stroke-width="1.75"/>
+                <path d="M11 2c-2.5 0-4 4-4 9s1.5 9 4 9M11 2c2.5 0 4 4 4 9s-1.5 9-4 9M2 11h18" stroke="white" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="stats__card-content">
+              <span class="stats__card-value" id="stat-domains">—</span>
+              <span class="stats__card-label">Domains Available</span>
+            </div>
+            <div class="stats__card-accent stats__card-accent--violet" aria-hidden="true"></div>
+          </article>
+
+          <article class="stats__card" aria-label="Remote opportunities">
+            <div class="stats__card-icon stats__card-icon--green" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <rect x="3" y="12" width="16" height="8" rx="2" stroke="white" stroke-width="1.75"/>
+                <path d="M7 12V9a4 4 0 0 1 8 0v3" stroke="white" stroke-width="1.75" stroke-linecap="round"/>
+                <circle cx="11" cy="16" r="1.5" fill="white"/>
+              </svg>
+            </div>
+            <div class="stats__card-content">
+              <span class="stats__card-value" id="stat-remote">—</span>
+              <span class="stats__card-label">Remote Opportunities</span>
+            </div>
+            <div class="stats__card-accent stats__card-accent--green" aria-hidden="true"></div>
+          </article>
+
+          <article class="stats__card" aria-label="Beginner friendly listings">
+            <div class="stats__card-icon stats__card-icon--orange" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                <path d="M11 2l2.4 6.6H20l-5.4 3.9 2.1 6.5L11 15l-5.7 4 2.1-6.5L2 8.6h6.6L11 2Z" stroke="white" stroke-width="1.75" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="stats__card-content">
+              <span class="stats__card-value" id="stat-beginner">—</span>
+              <span class="stats__card-label">Beginner Friendly</span>
+            </div>
+            <div class="stats__card-accent stats__card-accent--orange" aria-hidden="true"></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== VIEW TABS (Explore / Saved) ===== -->
+    <div class="view-tabs" role="tablist" aria-label="Project views">
+      <div class="view-tabs__container">
+        <button
+          class="view-tab is-active"
+          id="tab-explore"
+          role="tab"
+          aria-selected="true"
+          aria-controls="view-explore"
+          data-view="explore"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M9.5 9.5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          Explore
+          <span class="view-tab__badge" id="tab-explore-count" aria-label="total projects">20</span>
+        </button>
+        <button
+          class="view-tab"
+          id="tab-saved"
+          role="tab"
+          aria-selected="false"
+          aria-controls="view-saved"
+          data-view="saved"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+            <path d="M3 2h8a1 1 0 0 1 1 1v8.5l-4.5-2.5L3 11.5V3a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+          </svg>
+          Saved
+          <span class="view-tab__badge view-tab__saved-badge" id="tab-saved-count" aria-label="saved projects count">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== EXPLORE VIEW ===== -->
+    <div id="view-explore" role="tabpanel" aria-labelledby="tab-explore">
+
+      <!-- ===== DASHBOARD: FILTER + LISTINGS ===== -->
+      <section class="dashboard" id="listings" aria-label="Project listings dashboard">
+        <div class="dashboard__container">
+
+          <!-- Mobile Filter Toggle Button -->
+          <div class="dashboard__mobile-filter-bar">
+            <button
+              class="dashboard__mobile-filter-btn"
+              id="filter-toggle-btn"
+              aria-expanded="false"
+              aria-controls="filter-sidebar"
+              aria-label="Open filters"
+            >
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+              </svg>
+              Filters
+              <span class="dashboard__filter-count" id="active-filter-count" hidden aria-label="active filters">0</span>
+            </button>
+            <span class="dashboard__mobile-results" id="mobile-results-text" aria-live="polite" aria-atomic="true"></span>
+          </div>
+
+          <div class="dashboard__layout">
+
+            <!-- ===== FILTER SIDEBAR ===== -->
+            <aside class="filter-sidebar" id="filter-sidebar" aria-label="Filter listings">
+
+              <div class="filter-sidebar__header">
+                <h2 class="filter-sidebar__title">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                  </svg>
+                  Filters
+                </h2>
+                <button class="filter-sidebar__reset" id="reset-filters-btn" aria-label="Reset all filters">
+                  Reset All
+                </button>
+              </div>
+
+              <!-- Mobile close button -->
+              <button class="filter-sidebar__close" id="filter-close-btn" aria-label="Close filter panel">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M4 4l8 8M12 4l-8 8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                </svg>
+              </button>
+
+              <!-- Domain Filter -->
+              <fieldset class="filter-group" id="filter-domain">
+                <legend class="filter-group__legend">
+                  <button class="filter-group__toggle" aria-expanded="true" aria-controls="domain-options">
+                    <span>Domain</span>
+                    <svg class="filter-group__chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </legend>
+                <div class="filter-group__options" id="domain-options">
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="domain" value="Web Development" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">Web Development</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="domain" value="UI/UX Design" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">UI/UX Design</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="domain" value="Data Science" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">Data Science</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="domain" value="Mobile Development" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">Mobile Development</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="domain" value="Digital Marketing" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">Digital Marketing</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <!-- Experience Level Filter -->
+              <fieldset class="filter-group" id="filter-experience">
+                <legend class="filter-group__legend">
+                  <button class="filter-group__toggle" aria-expanded="true" aria-controls="experience-options">
+                    <span>Experience Level</span>
+                    <svg class="filter-group__chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </legend>
+                <div class="filter-group__options" id="experience-options">
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="experience" value="Beginner" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">Beginner</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="experience" value="Intermediate" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">Intermediate</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="experience" value="Advanced" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">Advanced</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <!-- Work Mode Filter -->
+              <fieldset class="filter-group" id="filter-workmode">
+                <legend class="filter-group__legend">
+                  <button class="filter-group__toggle" aria-expanded="true" aria-controls="workmode-options">
+                    <span>Work Mode</span>
+                    <svg class="filter-group__chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </legend>
+                <div class="filter-group__options" id="workmode-options">
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="workMode" value="Remote" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">Remote</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="workMode" value="Hybrid" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">Hybrid</span>
+                  </label>
+                  <label class="filter-checkbox">
+                    <input type="checkbox" name="workMode" value="On-site" class="filter-checkbox__input" />
+                    <span class="filter-checkbox__custom" aria-hidden="true"></span>
+                    <span class="filter-checkbox__label">On-site</span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <!-- Skills Filter -->
+              <fieldset class="filter-group" id="filter-skills">
+                <legend class="filter-group__legend">
+                  <button class="filter-group__toggle" aria-expanded="true" aria-controls="skills-options">
+                    <span>Skills</span>
+                    <svg class="filter-group__chevron" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </legend>
+                <div class="filter-group__options" id="skills-options">
+                  <!-- Dynamically populated from dataset -->
+                </div>
+              </fieldset>
+
+            </aside>
+
+            <!-- ===== LISTINGS SECTION ===== -->
+            <div class="listings" id="listings-section">
+
+              <!-- Listings Header -->
+              <div class="listings__header">
+                <div class="listings__header-left">
+                  <h2 class="listings__title">Explore Projects</h2>
+                  <span class="listings__count" id="results-count" aria-live="polite" aria-atomic="true">Loading…</span>
+                </div>
+                <div class="listings__header-right">
+                  <label for="sort-select" class="sr-only">Sort listings</label>
+                  <div class="listings__sort-wrapper">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M2 4h10M4 7h6M6 10h2" stroke="#64748B" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                    <select id="sort-select" class="listings__sort" aria-label="Sort listings">
+                      <option value="newest">Newest First</option>
+                      <option value="alpha">Alphabetical (A–Z)</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Active filter chips -->
+              <div class="filter-chips" id="filter-chips" aria-label="Active filters" hidden></div>
+
+              <!-- Listings Grid -->
+              <div
+                class="listings__grid"
+                id="listings-grid"
+                role="list"
+                aria-label="Project listings"
+                aria-live="polite"
+                aria-atomic="false"
+                aria-busy="true"
+              >
+                <!-- Skeleton cards shown while loading -->
+                <div class="skeleton-card" aria-hidden="true"><div class="skeleton-card__header"><div class="skeleton skeleton--badge"></div><div class="skeleton skeleton--title"></div><div class="skeleton skeleton--title skeleton--title-short"></div></div><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--text-short"></div><div class="skeleton-card__tags"><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div></div></div>
+                <div class="skeleton-card" aria-hidden="true"><div class="skeleton-card__header"><div class="skeleton skeleton--badge"></div><div class="skeleton skeleton--title"></div><div class="skeleton skeleton--title skeleton--title-short"></div></div><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--text-short"></div><div class="skeleton-card__tags"><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div></div></div>
+                <div class="skeleton-card" aria-hidden="true"><div class="skeleton-card__header"><div class="skeleton skeleton--badge"></div><div class="skeleton skeleton--title"></div><div class="skeleton skeleton--title skeleton--title-short"></div></div><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--text-short"></div><div class="skeleton-card__tags"><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div></div></div>
+                <div class="skeleton-card" aria-hidden="true"><div class="skeleton-card__header"><div class="skeleton skeleton--badge"></div><div class="skeleton skeleton--title"></div><div class="skeleton skeleton--title skeleton--title-short"></div></div><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--text-short"></div><div class="skeleton-card__tags"><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div></div></div>
+                <div class="skeleton-card" aria-hidden="true"><div class="skeleton-card__header"><div class="skeleton skeleton--badge"></div><div class="skeleton skeleton--title"></div><div class="skeleton skeleton--title skeleton--title-short"></div></div><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--text-short"></div><div class="skeleton-card__tags"><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div></div></div>
+                <div class="skeleton-card" aria-hidden="true"><div class="skeleton-card__header"><div class="skeleton skeleton--badge"></div><div class="skeleton skeleton--title"></div><div class="skeleton skeleton--title skeleton--title-short"></div></div><div class="skeleton skeleton--text"></div><div class="skeleton skeleton--text skeleton--text-short"></div><div class="skeleton-card__tags"><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div><div class="skeleton skeleton--tag"></div></div></div>
+              </div>
+
+              <!-- Error State (data fetch failure) -->
+              <div class="listings__error" id="listings-error" hidden role="alert" aria-live="assertive">
+                <div class="listings__error-icon" aria-hidden="true">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="#FECDD3" stroke-width="3" fill="#FFF1F2"/>
+                    <path d="M32 20v16M32 40v3" stroke="#DC2626" stroke-width="2.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3 class="listings__error-title">Could not load listings</h3>
+                <p class="listings__error-text">Something went wrong while fetching project data. Please check your connection and try again.</p>
+                <button class="btn btn--primary" id="retry-btn">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                    <path d="M2 7a5 5 0 1 1 1 3.1" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                    <path d="M2 10.5V7h3.5" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                  Retry
+                </button>
+              </div>
+
+              <!-- Empty State (no matching results) -->
+              <div class="listings__empty" id="listings-empty" hidden role="status">
+                <div class="listings__empty-icon" aria-hidden="true">
+                  <svg width="88" height="88" viewBox="0 0 88 88" fill="none">
+                    <circle cx="40" cy="40" r="28" stroke="#E2E8F0" stroke-width="3" fill="#F8FAFC"/>
+                    <circle cx="40" cy="40" r="18" stroke="#CBD5E1" stroke-width="1.5"/>
+                    <path d="M60 60l16 16" stroke="#E2E8F0" stroke-width="4" stroke-linecap="round"/>
+                    <path d="M34 40h12M40 34v12" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3 class="listings__empty-title">No projects found</h3>
+                <p class="listings__empty-text">No listings match your current search or filters. Try broadening your search, removing a filter, or clearing everything.</p>
+                <div class="listings__empty-actions">
+                  <button class="btn btn--primary" id="clear-all-btn">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                      <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                    </svg>
+                    Clear All Filters
+                  </button>
+                  <button class="btn btn--ghost" id="clear-search-only-btn">Clear Search Only</button>
+                </div>
+              </div>
+
+              <!-- Pagination -->
+              <nav
+                class="pagination"
+                id="pagination"
+                aria-label="Listing page navigation"
+                hidden
+              >
+                <div class="pagination__info" id="pagination-info" aria-live="polite" aria-atomic="true">
+                  <!-- e.g. "Showing 1–6 of 20 projects" -->
+                </div>
+                <div class="pagination__controls">
+                  <button
+                    class="pagination__btn pagination__btn--prev"
+                    id="pagination-prev"
+                    aria-label="Previous page"
+                    disabled
+                  >
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Prev</span>
+                  </button>
+
+                  <div class="pagination__pages" id="pagination-pages" role="list" aria-label="Page numbers">
+                    <!-- Numbered buttons rendered by JS -->
+                  </div>
+
+                  <button
+                    class="pagination__btn pagination__btn--next"
+                    id="pagination-next"
+                    aria-label="Next page"
+                  >
+                    <span>Next</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                      <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </button>
+                </div>
+              </nav>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /#view-explore -->
+
+    <!-- ===== SAVED PROJECTS VIEW ===== -->
+    <div id="view-saved" role="tabpanel" aria-labelledby="tab-saved" hidden>
+      <section class="saved-view is-active" id="saved-section" aria-labelledby="saved-title">
+        <div class="saved-view__container">
+
+          <div class="saved-view__header">
+            <div class="saved-view__header-left">
+              <h2 class="saved-view__title" id="saved-title">
+                <span class="saved-view__title-icon" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                    <path d="M4 2h10a1 1 0 0 1 1 1v12l-5.5-3L4 15V3a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round" fill="rgba(245,158,11,0.15)"/>
+                  </svg>
+                </span>
+                Saved Projects
+              </h2>
+              <p class="saved-view__subtitle" id="saved-subtitle">Your bookmarked listings — sorted, searchable, and paginated.</p>
+            </div>
+            <div class="saved-view__controls">
+              <label for="saved-sort-select" class="sr-only">Sort saved listings</label>
+              <div class="saved-sort-wrapper">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M2 4h10M4 7h6M6 10h2" stroke="#64748B" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <select id="saved-sort-select" class="saved-sort-select" aria-label="Sort saved listings">
+                  <option value="saved-order">Saved Order</option>
+                  <option value="newest">Newest First</option>
+                  <option value="alpha">Alphabetical (A–Z)</option>
+                </select>
+              </div>
+              <button class="btn btn--ghost" id="clear-all-saved-btn" aria-label="Remove all saved projects">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                  <path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+                </svg>
+                Clear All
+              </button>
+            </div>
+          </div>
+
+          <!-- Saved listings grid -->
+          <div
+            class="saved-view__grid"
+            id="saved-grid"
+            role="list"
+            aria-label="Saved project listings"
+            aria-live="polite"
+            aria-atomic="false"
+          >
+            <!-- Populated by JS -->
+          </div>
+
+          <!-- Saved empty state -->
+          <div class="saved-empty" id="saved-empty" hidden role="status">
+            <div class="saved-empty__illustration" aria-hidden="true">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                <path d="M12 6h28a2 2 0 0 1 2 2v34l-16-9-16 9V8a2 2 0 0 1 2-2Z" stroke="#F59E0B" stroke-width="2" stroke-linejoin="round" fill="rgba(245,158,11,0.1)"/>
+                <path d="M20 22h12M26 16v12" stroke="#F59E0B" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="saved-empty__title">No saved projects yet</h3>
+            <p class="saved-empty__text">Bookmark listings by clicking the
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style="display:inline;vertical-align:middle;margin:0 2px">
+                <path d="M3 2h8a1 1 0 0 1 1 1v8.5l-4.5-2.5L3 11.5V3a1 1 0 0 1 1-1Z" stroke="#F59E0B" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              icon on any project card. They'll appear here for quick access.
+            </p>
+            <button class="btn btn--primary" id="explore-from-saved-btn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="6" cy="6" r="4.5" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M9.5 9.5l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+              Explore Projects
+            </button>
+          </div>
+
+          <!-- Saved pagination -->
+          <nav
+            class="saved-view__pagination pagination"
+            id="saved-pagination"
+            aria-label="Saved projects page navigation"
+            hidden
+          >
+            <div class="pagination__info" id="saved-pagination-info" aria-live="polite" aria-atomic="true"></div>
+            <div class="pagination__controls">
+              <button class="pagination__btn" id="saved-prev-btn" aria-label="Previous page of saved projects" disabled>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>Prev</span>
+              </button>
+              <div class="pagination__pages" id="saved-pagination-pages" role="list" aria-label="Saved page numbers"></div>
+              <button class="pagination__btn" id="saved-next-btn" aria-label="Next page of saved projects">
+                <span>Next</span>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                  <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+          </nav>
+
+        </div>
+      </section>
+    </div><!-- /#view-saved -->
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__container">
+      <div class="footer__left">
+        <span class="footer__brand">ProjectHub</span>
+        <span class="footer__tagline">Discover · Learn · Grow</span>
+      </div>
+      <p class="footer__copy">&copy; 2026 ProjectHub. Built for Internship Task 4.</p>
+    </div>
+  </footer>
+
+  <!-- ===== MODAL: View Details ===== -->
+  <div
+    class="modal-overlay"
+    id="modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modal-title"
+    hidden
+  >
+    <div class="modal" id="modal">
+      <button class="modal__close" id="modal-close-btn" aria-label="Close details">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+      <div class="modal__content" id="modal-content">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== MODAL: Candidate Profile ===== -->
+  <div
+    class="modal-overlay"
+    id="profile-modal-overlay"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="profile-modal-title"
+    hidden
+  >
+    <div class="modal profile-modal" id="profile-modal">
+      <button class="modal__close" id="profile-modal-close" aria-label="Close profile">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <path d="M4 4l10 10M14 4L4 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="modal__content">
+        <!-- Header band with Candidate Avatar & Banner -->
+        <div class="modal__header-band profile-modal__header">
+          <div class="profile-modal__avatar-badge">SR</div>
+          <div class="profile-modal__header-info">
+            <h2 class="modal__title" id="profile-modal-title">Srihan</h2>
+            <p class="profile-modal__subtitle">Frontend Developer Candidate &bull; Internship Task 4</p>
+            <span class="profile-modal__status-pill">
+              <span class="profile-modal__status-dot"></span> Active &bull; Profile Verified
+            </span>
+          </div>
+        </div>
+
+        <!-- Body content -->
+        <div class="modal__body">
+          <p class="profile-modal__bio">
+            Passionate frontend engineering candidate specializing in clean user interfaces, responsive design systems, accessible components, and client-side web applications.
+          </p>
+
+          <h3 class="modal__section-title">Candidate Details</h3>
+          <div class="modal__details-grid">
+            <div class="modal__detail-item">
+              <span class="modal__detail-label">Email</span>
+              <span class="modal__detail-val">srihan@projecthub.io</span>
+            </div>
+            <div class="modal__detail-item">
+              <span class="modal__detail-label">Role</span>
+              <span class="modal__detail-val">Frontend Intern</span>
+            </div>
+            <div class="modal__detail-item">
+              <span class="modal__detail-label">Track</span>
+              <span class="modal__detail-val">Web Development</span>
+            </div>
+            <div class="modal__detail-item">
+              <span class="modal__detail-label">Bookmarked Projects</span>
+              <span class="modal__detail-val" id="profile-modal-saved-count">0 Projects</span>
+            </div>
+          </div>
+
+          <h3 class="modal__section-title">Technical Skills</h3>
+          <div class="profile-modal__skills-row">
+            <span class="skill-tag">HTML5 Semantic Architecture</span>
+            <span class="skill-tag">CSS3 (Grid, Flexbox, Custom Props)</span>
+            <span class="skill-tag">Vanilla JavaScript (ES6+)</span>
+            <span class="skill-tag">WCAG 2.1 AA Accessibility</span>
+            <span class="skill-tag">localStorage State Persistence</span>
+            <span class="skill-tag">Responsive UI &amp; Micro-interactions</span>
+          </div>
+
+          <h3 class="modal__section-title">Internship Task Overview</h3>
+          <div class="profile-modal__task-card">
+            <div class="profile-modal__task-badge">Task 4: ProjectHub Listing Dashboard</div>
+            <p class="profile-modal__task-desc">
+              High-performance client-side dashboard with debounced live search across titles/descriptions/skills, multi-category checkbox filtering with logical AND across groups, bookmarking with localStorage, sort controls, and pagination.
+            </p>
+          </div>
+        </div>
+
+        <!-- Actions -->
+        <div class="modal__actions">
+          <button type="button" class="btn btn--primary" id="profile-modal-view-saved">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+              <path d="M3 2h8a1 1 0 0 1 1 1v8.5l-4.5-2.5L3 11.5V3a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+            View Saved Projects (<span id="profile-modal-saved-btn-count">0</span>)
+          </button>
+          <button type="button" class="btn btn--secondary" id="profile-modal-cancel">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile filter backdrop -->
+  <div class="filter-backdrop" id="filter-backdrop" hidden aria-hidden="true"></div>
+
+  <!-- Live region for screen-reader announcements -->
+  <div id="sr-announcer" aria-live="assertive" aria-atomic="true" class="sr-only"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

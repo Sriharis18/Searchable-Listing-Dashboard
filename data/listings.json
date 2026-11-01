@@ -1,0 +1,363 @@
+[
+  {
+    "id": "proj-001",
+    "title": "E-Commerce Platform Redesign",
+    "description": "Revamp the UI/UX of an existing e-commerce platform. Improve navigation, product discovery, and checkout flows to boost conversion rates. Collaborate with the backend team via REST APIs.",
+    "domain": "Web Development",
+    "experience": "Intermediate",
+    "workMode": "Remote",
+    "skills": ["HTML", "CSS", "JavaScript", "UI/UX", "REST APIs"],
+    "postedDate": "2026-10-28",
+    "remote": true,
+    "beginner": false,
+    "details": {
+      "duration": "3 months",
+      "stipend": "$800/month",
+      "openings": 2,
+      "company": "ShopWave Inc."
+    }
+  },
+  {
+    "id": "proj-002",
+    "title": "Personal Finance Tracker App",
+    "description": "Build a mobile-first web app that lets users log income and expenses, visualize spending patterns with charts, and set monthly budgets. Great beginner-friendly project with real-world impact.",
+    "domain": "Web Development",
+    "experience": "Beginner",
+    "workMode": "Remote",
+    "skills": ["HTML", "CSS", "JavaScript", "Chart.js"],
+    "postedDate": "2026-10-27",
+    "remote": true,
+    "beginner": true,
+    "details": {
+      "duration": "2 months",
+      "stipend": "$400/month",
+      "openings": 3,
+      "company": "FinTrack Labs"
+    }
+  },
+  {
+    "id": "proj-003",
+    "title": "Data Pipeline for E-Learning Analytics",
+    "description": "Design and implement an ETL pipeline that collects learner activity data from an e-learning platform, processes it in batch, and loads it into a PostgreSQL warehouse for BI dashboards.",
+    "domain": "Data Science",
+    "experience": "Advanced",
+    "workMode": "Hybrid",
+    "skills": ["Python", "SQL", "ETL", "PostgreSQL", "Pandas"],
+    "postedDate": "2026-10-25",
+    "remote": false,
+    "beginner": false,
+    "details": {
+      "duration": "4 months",
+      "stipend": "$1200/month",
+      "openings": 1,
+      "company": "EduMetrics Co."
+    }
+  },
+  {
+    "id": "proj-004",
+    "title": "Design System & Component Library",
+    "description": "Create a cohesive design system from scratch including a comprehensive component library with atoms, molecules, and organisms. Deliver Figma files and CSS/HTML reference implementations.",
+    "domain": "UI/UX Design",
+    "experience": "Intermediate",
+    "workMode": "Remote",
+    "skills": ["UI/UX", "Figma", "CSS", "HTML", "Design Systems"],
+    "postedDate": "2026-10-26",
+    "remote": true,
+    "beginner": false,
+    "details": {
+      "duration": "3 months",
+      "stipend": "$700/month",
+      "openings": 2,
+      "company": "PixelCraft Studio"
+    }
+  },
+  {
+    "id": "proj-005",
+    "title": "Fitness Tracking iOS Application",
+    "description": "Develop a native iOS app for workout logging, step counting, and progress visualization. Integrate HealthKit for biometric data. Requires Swift knowledge and familiarity with UIKit or SwiftUI.",
+    "domain": "Mobile Development",
+    "experience": "Intermediate",
+    "workMode": "On-site",
+    "skills": ["Swift", "iOS", "HealthKit", "UI/UX"],
+    "postedDate": "2026-10-22",
+    "remote": false,
+    "beginner": false,
+    "details": {
+      "duration": "3 months",
+      "stipend": "$900/month",
+      "openings": 1,
+      "company": "FitPulse Technologies"
+    }
+  },
+  {
+    "id": "proj-006",
+    "title": "Social Media Content Calendar Tool",
+    "description": "Build a web-based content planning tool for digital marketers. Features include drag-and-drop scheduling, multi-platform post management, hashtag suggestions, and analytics integration.",
+    "domain": "Digital Marketing",
+    "experience": "Beginner",
+    "workMode": "Remote",
+    "skills": ["HTML", "CSS", "JavaScript", "REST APIs"],
+    "postedDate": "2026-10-24",
+    "remote": true,
+    "beginner": true,
+    "details": {
+      "duration": "2 months",
+      "stipend": "$500/month",
+      "openings": 4,
+      "company": "SocialPulse Agency"
+    }
+  },
+  {
+    "id": "proj-007",
+    "title": "Machine Learning Sentiment Analysis Dashboard",
+    "description": "Train a sentiment analysis model on customer reviews using scikit-learn and NLTK, then build an interactive dashboard with Streamlit to visualize sentiment trends over time.",
+    "domain": "Data Science",
+    "experience": "Advanced",
+    "workMode": "Remote",
+    "skills": ["Python", "Machine Learning", "NLP", "Pandas", "Streamlit"],
+    "postedDate": "2026-10-20",
+    "remote": true,
+    "beginner": false,
+    "details": {
+      "duration": "4 months",
+      "stipend": "$1100/month",
+      "openings": 2,
+      "company": "Insightful AI"
+    }
+  },
+  {
+    "id": "proj-008",
+    "title": "Restaurant Booking & Menu Web App",
+    "description": "Create a full-featured restaurant website with table reservation, dynamic menu display, and an admin panel for managing reservations and menu items. A great React project for intermediates.",
+    "domain": "Web Development",
+    "experience": "Intermediate",
+    "workMode": "Hybrid",
+    "skills": ["React", "JavaScript", "CSS", "REST APIs", "SQL"],
+    "postedDate": "2026-10-18",
+    "remote": false,
+    "beginner": false,
+    "details": {
+      "duration": "3 months",
+      "stipend": "$750/month",
+      "openings": 2,
+      "company": "TasteBud Ventures"
+    }
+  },
+  {
+    "id": "proj-009",
+    "title": "UX Research & Usability Testing",
+    "description": "Conduct comprehensive UX research for a SaaS product: user interviews, competitive analysis, heuristic evaluations, and moderated usability tests. Synthesize findings into actionable design recommendations.",
+    "domain": "UI/UX Design",
+    "experience": "Beginner",
+    "workMode": "Remote",
+    "skills": ["UI/UX", "User Research", "Figma", "Prototyping"],
+    "postedDate": "2026-10-29",
+    "remote": true,
+    "beginner": true,
+    "details": {
+      "duration": "2 months",
+      "stipend": "$450/month",
+      "openings": 3,
+      "company": "ClearPath UX"
+    }
+  },
+  {
+    "id": "proj-010",
+    "title": "Cross-Platform Chat Application",
+    "description": "Build a real-time chat application using React Native for iOS and Android. Implement WebSocket-based messaging, push notifications, read receipts, and media sharing capabilities.",
+    "domain": "Mobile Development",
+    "experience": "Advanced",
+    "workMode": "Remote",
+    "skills": ["React", "JavaScript", "WebSockets", "Mobile Dev", "REST APIs"],
+    "postedDate": "2026-10-15",
+    "remote": true,
+    "beginner": false,
+    "details": {
+      "duration": "4 months",
+      "stipend": "$1000/month",
+      "openings": 2,
+      "company": "Connectly Inc."
+    }
+  },
+  {
+    "id": "proj-011",
+    "title": "SEO Optimization & Content Strategy Audit",
+    "description": "Perform a technical SEO audit for a growing startup's website. Identify on-page and off-page issues, develop keyword strategies, create content briefs, and implement structured data markup.",
+    "domain": "Digital Marketing",
+    "experience": "Intermediate",
+    "workMode": "Remote",
+    "skills": ["SEO", "Content Strategy", "Google Analytics", "HTML"],
+    "postedDate": "2026-10-21",
+    "remote": true,
+    "beginner": false,
+    "details": {
+      "duration": "2 months",
+      "stipend": "$600/month",
+      "openings": 2,
+      "company": "RankBoost Digital"
+    }
+  },
+  {
+    "id": "proj-012",
+    "title": "SQL Database Performance Optimization",
+    "description": "Analyze and optimize a legacy MySQL database for a high-traffic web application. Tasks include query profiling, index tuning, normalization review, and implementing caching strategies with Redis.",
+    "domain": "Data Science",
+    "experience": "Advanced",
+    "workMode": "On-site",
+    "skills": ["SQL", "MySQL", "Redis", "Python", "Database Design"],
+    "postedDate": "2026-10-10",
+    "remote": false,
+    "beginner": false,
+    "details": {
+      "duration": "3 months",
+      "stipend": "$1050/month",
+      "openings": 1,
+      "company": "DataScale Systems"
+    }
+  },
+  {
+    "id": "proj-013",
+    "title": "Beginner Portfolio Website Builder",
+    "description": "Develop a drag-and-drop portfolio builder where users can select templates, customize colors and fonts, add project showcases, and publish their site. Perfect for beginner developers learning JavaScript.",
+    "domain": "Web Development",
+    "experience": "Beginner",
+    "workMode": "Remote",
+    "skills": ["HTML", "CSS", "JavaScript"],
+    "postedDate": "2026-10-30",
+    "remote": true,
+    "beginner": true,
+    "details": {
+      "duration": "2 months",
+      "stipend": "$350/month",
+      "openings": 5,
+      "company": "PortfolioPress"
+    }
+  },
+  {
+    "id": "proj-014",
+    "title": "Healthcare Appointment Booking App",
+    "description": "Build a Progressive Web App that enables patients to search for doctors, view availability calendars, book appointments, and receive SMS reminders. Focus on accessibility and HIPAA-friendly design.",
+    "domain": "Web Development",
+    "experience": "Intermediate",
+    "workMode": "Hybrid",
+    "skills": ["JavaScript", "React", "CSS", "REST APIs", "Accessibility"],
+    "postedDate": "2026-10-17",
+    "remote": false,
+    "beginner": false,
+    "details": {
+      "duration": "4 months",
+      "stipend": "$850/month",
+      "openings": 2,
+      "company": "MedBook Solutions"
+    }
+  },
+  {
+    "id": "proj-015",
+    "title": "Brand Identity & Marketing Campaign Design",
+    "description": "Design a complete brand identity package — logo, color palette, typography, brand guidelines — and create digital marketing assets for social media, email newsletters, and paid ad campaigns.",
+    "domain": "UI/UX Design",
+    "experience": "Intermediate",
+    "workMode": "On-site",
+    "skills": ["UI/UX", "Figma", "Adobe Illustrator", "Branding", "Design Systems"],
+    "postedDate": "2026-10-23",
+    "remote": false,
+    "beginner": false,
+    "details": {
+      "duration": "3 months",
+      "stipend": "$800/month",
+      "openings": 1,
+      "company": "BrandCraft Agency"
+    }
+  },
+  {
+    "id": "proj-016",
+    "title": "Email Marketing Automation Platform",
+    "description": "Build and run automated email marketing campaigns using Mailchimp and custom HTML email templates. Track open rates, click-through rates, and A/B test subject lines to maximize engagement.",
+    "domain": "Digital Marketing",
+    "experience": "Beginner",
+    "workMode": "Remote",
+    "skills": ["HTML", "Email Marketing", "Copywriting", "Analytics"],
+    "postedDate": "2026-10-26",
+    "remote": true,
+    "beginner": true,
+    "details": {
+      "duration": "2 months",
+      "stipend": "$400/month",
+      "openings": 3,
+      "company": "InboxFirst Agency"
+    }
+  },
+  {
+    "id": "proj-017",
+    "title": "React Native Expense Manager",
+    "description": "Create a cross-platform mobile expense management app with category tagging, receipt photo capture, monthly summaries, and CSV export. Uses Redux for state management and SQLite for local storage.",
+    "domain": "Mobile Development",
+    "experience": "Intermediate",
+    "workMode": "Remote",
+    "skills": ["React", "JavaScript", "SQL", "Mobile Dev", "Redux"],
+    "postedDate": "2026-10-14",
+    "remote": true,
+    "beginner": false,
+    "details": {
+      "duration": "3 months",
+      "stipend": "$850/month",
+      "openings": 2,
+      "company": "SpendSmart Labs"
+    }
+  },
+  {
+    "id": "proj-018",
+    "title": "Open Source Contribution Dashboard",
+    "description": "Build a developer productivity dashboard that aggregates GitHub activity — PRs, issues, commits — using the GitHub API. Display contribution graphs, streak tracking, and repository health metrics.",
+    "domain": "Web Development",
+    "experience": "Beginner",
+    "workMode": "Remote",
+    "skills": ["JavaScript", "HTML", "CSS", "REST APIs", "GitHub API"],
+    "postedDate": "2026-10-29",
+    "remote": true,
+    "beginner": true,
+    "details": {
+      "duration": "2 months",
+      "stipend": "$450/month",
+      "openings": 4,
+      "company": "DevPulse Community"
+    }
+  },
+  {
+    "id": "proj-019",
+    "title": "Predictive Customer Churn Model",
+    "description": "Develop a machine learning model to predict customer churn for a subscription SaaS company. Use Python, scikit-learn, and feature engineering on CRM data. Deliver an interactive report with SHAP explanations.",
+    "domain": "Data Science",
+    "experience": "Advanced",
+    "workMode": "Remote",
+    "skills": ["Python", "Machine Learning", "SQL", "Pandas", "Data Visualization"],
+    "postedDate": "2026-10-12",
+    "remote": true,
+    "beginner": false,
+    "details": {
+      "duration": "4 months",
+      "stipend": "$1300/month",
+      "openings": 1,
+      "company": "RetainIQ Analytics"
+    }
+  },
+  {
+    "id": "proj-020",
+    "title": "Accessibility Audit & Remediation",
+    "description": "Evaluate a government web portal against WCAG 2.1 AA standards. Document all violations, prioritize fixes, implement remediation in HTML/CSS, and produce a detailed accessibility conformance report.",
+    "domain": "UI/UX Design",
+    "experience": "Beginner",
+    "workMode": "On-site",
+    "skills": ["HTML", "CSS", "UI/UX", "Accessibility", "WCAG"],
+    "postedDate": "2026-10-16",
+    "remote": false,
+    "beginner": true,
+    "details": {
+      "duration": "2 months",
+      "stipend": "$500/month",
+      "openings": 2,
+      "company": "GovTech Solutions"
+    }
+  }
+]
+
